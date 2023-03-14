@@ -1,4 +1,5 @@
 import { TextField } from "@mui/material"
+import { ChangeEvent } from "react";
 
 interface IProps {
   label: string;
@@ -8,7 +9,7 @@ interface IProps {
   error?: boolean;
 
   value: string;
-  onChange: () => void
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
 function Input(props: IProps) {
@@ -19,7 +20,7 @@ function Input(props: IProps) {
         required
         fullWidth
         autoFocus
-        data-testid="input"
+        data-testid={props.name}
         helperText={props.error ? 'Empty field!' : ''}
         {...props}
       />

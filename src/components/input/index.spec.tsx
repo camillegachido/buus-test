@@ -14,7 +14,7 @@ describe('input', () => {
       onChange={() => { }}
     />);
 
-    const component = await screen.getByTestId('input')
+    const component = await screen.getByTestId('name-test')
 
     expect(component).toBeTruthy()
   });
