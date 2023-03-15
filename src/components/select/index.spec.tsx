@@ -8,7 +8,7 @@ describe('select', () => {
   it('should render select', async () => {
     render(<Select
       options={[]}
-      value={''}
+      value={0}
       onChange={() => { }}
       label='Label'
     />
@@ -22,7 +22,7 @@ describe('select', () => {
       options={[
         { label: 'Option 1', value: 1 },
         { label: 'option 2', value: 2 }]}
-      value={''}
+      value={0}
       onChange={() => { }}
       label='Label'
     />
