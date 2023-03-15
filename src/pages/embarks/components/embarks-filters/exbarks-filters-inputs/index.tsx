@@ -2,7 +2,7 @@ import { Autocomplete, TextField, Grid } from "@mui/material"
 import { Dayjs } from "dayjs";
 
 import { DatePicker } from '~/components'
-import { IFilterOptions } from "../../types";
+import { IFilterOptions } from "../../../types";
 
 interface IProps {
   filter: IFilterOptions;

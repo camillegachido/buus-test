@@ -6,7 +6,7 @@ import { MoreFiltersButton } from "./styles"
 import { EmbarksFiltersExtended } from ".."
 import { options } from "../../options"
 import { IFilterOptions } from "../../types"
-import EmbarksFiltersInputs from "../exbarks-filters-inputs";
+import EmbarksFiltersInputs from "./exbarks-filters-inputs";
 
 interface IProps {
   onApply: (data: IFilterOptions) => void

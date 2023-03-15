@@ -1,7 +1,8 @@
-import { render, screen } from "@testing-library/react";
-import dayjs from "dayjs";
-import EmbarksFiltersInputs from ".";
-import { options } from "../../options";
+import { render, screen } from '@testing-library/react';
+import dayjs from 'dayjs';
+
+import EmbarksFiltersExtended from '.';
+import { options } from '../../../options';
 
 const filter = {
   car: '',
@@ -12,11 +13,9 @@ const filter = {
   tripDuration: 0
 }
 
-
-
 describe('Embarks filters extended', () => {
-  it('should render embarks filters inputs', () => {
-    render(<EmbarksFiltersInputs
+  it('should render embarks filters extended', () => {
+    render(<EmbarksFiltersExtended
       filter={filter}
       updateFilter={() => { }} />);
 
