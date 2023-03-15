@@ -5,18 +5,21 @@ import Sidebar from './components/sidebar';
 
 function Dashboard() {
   return (
-    <Box
-      display='flex'
-    >
+    <>
       <Sidebar />
-      <Box width='100%'>
+      <Box
+        paddingLeft='75px'
+        width='100%'
+        boxSizing='border-box'
+      >
         <Header />
         <Container>
           <Outlet />
         </Container>
 
       </Box>
-    </Box>
+    </>
+
   )
 
 }

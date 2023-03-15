@@ -1,4 +1,4 @@
-import { Box, Avatar } from '@mui/material';
+import { Box } from '@mui/material';
 
 import Logo from '~/assets/icon.png';
 import Map from '~/assets/map.png';
@@ -12,6 +12,7 @@ function Sidebar() {
         bgcolor='#E8E8E8'
         padding='16px'
         boxSizing='border-box'
+        position='fixed'
       >
         <img
           alt="Buus logo"
