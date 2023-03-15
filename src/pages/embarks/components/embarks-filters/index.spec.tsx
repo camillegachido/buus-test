@@ -43,8 +43,7 @@ describe('Embarks filters', () => {
     const filterContainer = screen.queryByTestId(options.expandedFilter)
     expect(filterContainer).toBeInTheDocument();
 
-    const changedButton = await screen.getByText(/Hide filters/)
-    await user.click(changedButton)
+    await user.click(button)
     expect(filterContainer).not.toBeInTheDocument();
   });
   it('should call function when click on "Apply" button', async () => {
