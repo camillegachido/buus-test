@@ -1,4 +1,5 @@
 export const options = {
   filter: 'filter',
-  expandedFilter: 'expanded-filter'
+  filterInputs: 'filter-inputs',
+  filterExpanded: 'filter-expended'
 }
