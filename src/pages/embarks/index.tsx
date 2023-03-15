@@ -1,5 +1,6 @@
 import { Typography, Box, Divider } from "@mui/material"
 import { EmbarksFilter } from './components'
+import { EmbarksTable } from './components'
 
 function Embarks() {
   return <>
@@ -9,6 +10,7 @@ function Embarks() {
       <Divider />
     </Box>
     <EmbarksFilter onApply={() => { }} />
+    <EmbarksTable />
   </>
 }
 
