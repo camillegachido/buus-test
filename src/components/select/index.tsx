@@ -13,7 +13,6 @@ interface IProps {
   onChange: (value: number) => void;
 }
 
-
 function StyledSelect({ label, options, value, onChange }: IProps) {
   const newOptions = [{ label: 'All', value: 0 }, ...options];
 
@@ -24,6 +23,7 @@ function StyledSelect({ label, options, value, onChange }: IProps) {
       value={value}
       label={label}
       onChange={(e) => onChange(parseInt(e.target.value.toString()))}
+      size="small"
     >
       {newOptions.map(option => <MenuItem
         value={option.value}
