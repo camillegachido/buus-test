@@ -13,7 +13,7 @@ describe('Embarks filters', () => {
   it('should not display extend filters by default', () => {
     render(<EmbarksFilters onApply={() => { }} />)
 
-    const filterContainer = screen.queryByTestId(options.expandedFilter)
+    const filterContainer = screen.queryByTestId(options.filterExpanded)
     expect(filterContainer).not.toBeInTheDocument();
   });
   it('should display extend filters after click', async () => {
@@ -22,7 +22,7 @@ describe('Embarks filters', () => {
     const button = screen.getByText(/More filters/)
     await user.click(button)
 
-    const filterContainer = screen.queryByTestId(options.expandedFilter)
+    const filterContainer = screen.queryByTestId(options.filterExpanded)
     expect(filterContainer).toBeInTheDocument();
   });
   it('should change button "More filters" text to "Hide filters"', async () => {
@@ -40,7 +40,7 @@ describe('Embarks filters', () => {
     const button = await screen.getByText(/More filters/)
     await user.click(button)
 
-    const filterContainer = screen.queryByTestId(options.expandedFilter)
+    const filterContainer = screen.queryByTestId(options.filterExpanded)
     expect(filterContainer).toBeInTheDocument();
 
     await user.click(button)
