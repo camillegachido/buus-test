@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { Input } from "~/components"
 import { options } from './options';
-import { useForm } from '~/hooks';
+import { useForm } from '~/common/hooks';
 import { useNavigate } from 'react-router-dom';
 
 interface IFormData {
