@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import dayjs from 'dayjs';
 
-import { localizationProvider } from '~/hocs';
+import { localizationProvider } from '~/common/hocs';
 
 import DatePicker from './'
 import { options } from './options';

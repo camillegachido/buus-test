@@ -2,7 +2,7 @@ import { RouterProvider } from 'react-router-dom'
 import router from '~/routes'
 import './App.css';
 
-import { localizationProvider } from './hocs'
+import { localizationProvider } from './common/hocs'
 
 function App() {
   return (
