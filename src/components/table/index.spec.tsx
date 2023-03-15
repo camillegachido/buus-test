@@ -43,6 +43,7 @@ describe('table', () => {
       data={data}
       generateRow={generateRow}
       header={['Driver', 'Car']}
+      loading={false}
     />
     );
 
@@ -54,6 +55,7 @@ describe('table', () => {
       data={data}
       generateRow={generateRow}
       header={['Driver', 'Car']}
+      loading={false}
     />
     );
 
@@ -68,6 +70,7 @@ describe('table', () => {
       data={data}
       generateRow={generateRow}
       header={['Driver', 'Car']}
+      loading={false}
     />);
 
     const td1 = screen.queryAllByText(/John/);
@@ -81,6 +84,7 @@ describe('table', () => {
       data={data}
       generateRow={generateRow}
       header={['Driver', 'Car']}
+      loading={false}
     />);
 
     const nextButton = screen.getByTitle('Go to next page')
@@ -105,6 +109,7 @@ describe('table', () => {
       data={data}
       generateRow={generateRow}
       header={['Driver', 'Car']}
+      loading={false}
     />);
 
     const nextButton = screen.getByTitle('Go to next page')
@@ -130,6 +135,7 @@ describe('table', () => {
       data={data}
       generateRow={generateRow}
       header={['Driver', 'Car']}
+      loading={false}
     />);
 
     const select = screen.getByTitle('rows per page')
