@@ -70,7 +70,7 @@ describe('Page: Sign in', () => {
     const button = await screen.findByText(/Sign In/)
     await user.click(button)
 
-    const dashboard = await screen.findByText(/Welcome/)
+    const dashboard = await screen.findByText(/Embarks/)
     expect(dashboard).toBeInTheDocument()
   });
 })
