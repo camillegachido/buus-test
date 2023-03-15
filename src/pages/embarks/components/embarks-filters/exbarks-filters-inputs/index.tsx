@@ -1,7 +1,7 @@
-import { Autocomplete, TextField, Grid } from "@mui/material"
+import { Grid } from "@mui/material"
 import { Dayjs } from "dayjs";
 
-import { DatePicker } from '~/components'
+import { DatePicker, Autocomplete } from '~/components'
 import { IFilterOptions } from "../../../types";
 
 interface IProps {
@@ -30,8 +30,8 @@ function EmbarksFiltersInputs({ filter, updateFilter }: IProps) {
         <Autocomplete
           options={[]}
           value={filter.route}
-          onChange={(e, value) => updateFilter("route", value)}
-          renderInput={(params) => <TextField {...params} size="small" label="Routes" fullWidth={true} />}
+          onChange={(value) => updateFilter("route", value)}
+          label="Routes"
         />
       </Grid>
     </Grid>

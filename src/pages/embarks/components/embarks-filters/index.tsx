@@ -46,7 +46,7 @@ function EmbarksFilters({ onApply }: IProps) {
         </MoreFiltersButton>
       </Box>
       <EmbarksFiltersInputs updateFilter={updateFilter} filter={filter} />
-      {openFilter && <EmbarksFiltersExtended />}
+      {openFilter && <EmbarksFiltersExtended updateFilter={updateFilter} filter={filter} />}
       <Box display='flex' justifyContent='flex-end'>
         <Button
           variant='text'

@@ -6,8 +6,8 @@ import { localizationProvider } from '~/common/hocs';
 import DatePicker from './'
 import { options } from './options';
 
-describe('input', () => {
-  it('should render input', () => {
+describe('date picker', () => {
+  it('should render date picker', () => {
     render(
       localizationProvider(
         <DatePicker
@@ -21,5 +21,5 @@ describe('input', () => {
 
     expect(component).toBeTruthy()
     expect(component).toHaveTextContent('Label')
-  })
+  });
 })
