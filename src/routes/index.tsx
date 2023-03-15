@@ -1,13 +1,13 @@
-import { Routes, Route } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
+import { SignIn } from "~/pages";
+import protectedRoutes from "./protected-routes";
 
-import SignIn from "~/pages/sign-in";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <SignIn />
+  },
+  protectedRoutes
+]);
 
-function AppRoutes() {
-    return (
-        <Routes>
-            <Route path="/" element={<SignIn />} />
-        </Routes>
-    )
-}
-
-export default AppRoutes;
+export default router

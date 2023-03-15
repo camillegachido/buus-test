@@ -6,6 +6,7 @@ import Container from '@mui/material/Container';
 import { Input } from "~/components"
 import { options } from './options';
 import { useForm } from '~/hooks';
+import { useNavigate } from 'react-router-dom';
 
 interface IFormData {
   password: string;
@@ -13,10 +14,12 @@ interface IFormData {
 }
 
 function SignIn() {
+  const navigate = useNavigate();
   const { form, setForm } = useForm<IFormData>({ password: '', username: '' })
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+    event.preventDefault()
+    navigate('/dashboard')
   };
 
   const updateData = useCallback((key: string, value: string) => {
