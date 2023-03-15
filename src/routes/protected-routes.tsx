@@ -6,7 +6,7 @@ const protectedRoutes = {
   element: <Dashboard />,
   children: [
     {
-      path: "*",
+      path: "",
       element: <Embarks />,
     }
   ],
