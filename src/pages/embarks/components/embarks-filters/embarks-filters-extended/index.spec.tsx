@@ -21,7 +21,7 @@ describe('Embarks filters extended', () => {
       filter={filter}
       updateFilter={() => { }} />);
 
-    const component = screen.queryByTestId(options.filterInputs)
+    const component = screen.queryByTestId(options.filterExpanded)
 
     expect(component).toBeInTheDocument();
   });
