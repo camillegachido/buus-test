@@ -35,12 +35,13 @@ const generateRow = (row: IEmbark) => {
 
 interface IProps {
   data: IEmbark[]
+  loading: boolean
 }
 
-function EmbarksTable({ data }: IProps) {
+function EmbarksTable({ data, loading }: IProps) {
   return <Table
     data={data}
-    loading={false}
+    loading={loading}
     generateRow={generateRow}
     header={['Date', 'Route', 'Driver', 'Car', 'Started at', 'Ended at', 'Embarks', '']}
   />

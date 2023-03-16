@@ -10,11 +10,15 @@ import { EmbarksTable } from './components'
 
 function Embarks() {
   const [embarks, setEmbarks] = useState<IEmbark[]>([])
+  const [loading, setLoading] = useState(false)
 
   const applyFilters = (filter: IEmbarkFilters) => {
+    setLoading(true)
     new Promise(resolve => setTimeout(resolve, 2000))
       .then(() => {
         setEmbarks(filterEmbarks(embarks, filter))
+      }).finally(() => {
+        setLoading(false)
       })
   };
 
@@ -29,7 +33,7 @@ function Embarks() {
       <Divider />
     </Box>
     <EmbarksFilter onApply={applyFilters} />
-    <EmbarksTable data={embarks} />
+    <EmbarksTable data={embarks} loading={loading} />
   </>
 }
 
