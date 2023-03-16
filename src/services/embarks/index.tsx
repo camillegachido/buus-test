@@ -14,8 +14,6 @@ const createEmbarks: IEmbark[] = [
   createData('2022-03-30', 'L01 Zona Sul x Refinaria',
     'Via Linha Amarela', 'João Mendes', 'LBP-4533', '08:00:00', '09:00:00', '20'),
   createData('2022-03-30', 'L01 Zona Sul x Refinaria',
-    'Via Linha Amarela', 'João Mendes', 'LBP-4534', '08:00:00', '09:00:00', '20'),
-  createData('2022-03-30', 'L01 Zona Sul x Refinaria',
     'Via Linha Amarela', 'João Mendes', 'LBP-4548', '08:00:00', '09:00:00', '20'),
   createData('2022-04-30', 'L04 Margarida x Ferrovia',
     'Via Linha Amarela', 'Paula Ferreira', 'LBP-4535', '08:00:00', '09:00:00', '20'),

@@ -6,6 +6,7 @@ import { Dayjs } from "dayjs";
 import { IEmbarkFilters } from "~/common/types/embarks";
 import { DatePicker, Autocomplete } from '~/components'
 import { GetRoutes } from "~/services/embarks";
+import { options } from "~/pages/embarks/options";
 
 interface IProps {
   filter: IEmbarkFilters;
@@ -21,7 +22,7 @@ function EmbarksFiltersInputs({ filter, updateFilter }: IProps) {
 
 
   return (
-    <Grid container spacing={1}>
+    <Grid container spacing={1} data-testid={options.filterInputs}>
       <Grid item xs={2}>
         <DatePicker
           label="From"

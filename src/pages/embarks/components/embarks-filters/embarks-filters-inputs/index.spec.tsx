@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import dayjs from "dayjs";
+import { localizationProvider } from "~/common/hocs";
 import EmbarksFiltersInputs from ".";
 import { options } from "../../../options";
 
@@ -12,11 +13,12 @@ const filter = {
   tripDuration: 0
 }
 
-describe('Embarks filters extended', () => {
+describe('Embarks filters input', () => {
   it('should render embarks filters inputs', () => {
-    render(<EmbarksFiltersInputs
-      filter={filter}
-      updateFilter={() => { }} />);
+    render(localizationProvider(
+      <EmbarksFiltersInputs
+        filter={filter}
+        updateFilter={() => { }} />));
 
     const component = screen.queryByTestId(options.filterInputs)
 
