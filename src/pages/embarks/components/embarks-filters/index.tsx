@@ -14,14 +14,13 @@ interface IProps {
 
 function EmbarksFilters({ onApply }: IProps) {
   const [filter, setFilter] = useState<IEmbarkFilters>({
-    car: '',
-    route: '',
-    from: dayjs(new Date()),
-    to: dayjs(new Date()),
-    driver: '',
+    car: 'All',
+    route: 'All',
+    from: dayjs(new Date('2022-01-01')),
+    to: dayjs(new Date('2022-12-31')),
+    driver: 'All',
     tripDuration: 0
   })
-
   const [openFilter, setOpenFilter] = useState(false)
 
   const updateFilter = (key: string, value: string | number | Dayjs | null) => {
