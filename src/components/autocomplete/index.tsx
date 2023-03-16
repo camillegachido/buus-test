@@ -1,4 +1,5 @@
-import { Autocomplete, TextField } from "@mui/material";
+import { Autocomplete, AutocompleteInputChangeReason, TextField } from "@mui/material";
+import { useCallback } from "react";
 
 import { options as test } from './options';
 
@@ -12,12 +13,20 @@ interface IProps {
 function StyledAutocomplete({ options, value, onChange, label }: IProps) {
   const newOptions = ['All', ...options];
 
-  return <div data-testid={test.autocomplete}><Autocomplete
-    options={newOptions}
-    value={value}
-    onChange={(e, newValue) => onChange(newValue)}
-    renderInput={(params) => <TextField {...params} size="small" label={label} fullWidth={true} />}
-  />
+  const onInputChange = useCallback((e: React.SyntheticEvent<Element, Event>, newValue: string | null) => {
+    if (newValue)
+      onChange(newValue)
+    else
+      onChange('All')
+  }, [])
+
+  return <div data-testid={test.autocomplete}>
+    <Autocomplete
+      options={newOptions}
+      value={value}
+      onChange={onInputChange}
+      renderInput={(params) => <TextField {...params} size="small" label={label} fullWidth={true} />}
+    />
   </div>
 }
 
