@@ -57,7 +57,7 @@ function EmbarksFiltersExtended({ filter, updateFilter }: IProps) {
           options={trip}
           value={filter.tripDuration}
           label='Trip duration'
-          onChange={(value) => updateFilter("trip", value)} />
+          onChange={(value) => updateFilter("tripDuration", value)} />
       </Grid>
 
     </Grid>

@@ -35,7 +35,7 @@ describe('table body', () => {
     const skeleton = screen.queryAllByTestId(options.skeleton)
     expect(skeleton).toBeInTheDocument()
   })
-  it('should render skeleton if row length is 0', () => {
+  it('should render No data message if row length is 0', () => {
     render(<table>
       <TableBody
         rowsLength={0}
@@ -48,8 +48,8 @@ describe('table body', () => {
     </table>
     )
 
-    const skeleton = screen.queryAllByTestId(options.skeleton)
-    expect(skeleton).toBeInTheDocument()
+    const noData = screen.queryByText(/No data was found/)
+    expect(noData).toBeInTheDocument()
   })
   it('should render children if rows length is bigger than 0 and loading is false', () => {
     render(<table>

@@ -7,23 +7,32 @@ import { GetEmbarks } from "~/services/embarks"
 import { EmbarksFilter } from './components'
 import { EmbarksTable } from './components'
 
+interface IPageData<T> {
+  original: T
+  filtered: T
+}
 
 function Embarks() {
-  const [embarks, setEmbarks] = useState<IEmbark[]>([])
+  const [data, setData] = useState<IPageData<IEmbark[]>>(
+    { original: [], filtered: [] })
+
   const [loading, setLoading] = useState(false)
 
   const applyFilters = (filter: IEmbarkFilters) => {
     setLoading(true)
     new Promise(resolve => setTimeout(resolve, 2000))
       .then(() => {
-        setEmbarks(filterEmbarks(embarks, filter))
+        setData({
+          ...data, filtered: filterEmbarks(data.original, filter)
+        })
       }).finally(() => {
         setLoading(false)
       })
   };
 
   useEffect(() => {
-    setEmbarks(GetEmbarks())
+    const embarks = GetEmbarks()
+    setData({ original: embarks, filtered: embarks })
   }, [])
 
   return <>
@@ -33,7 +42,7 @@ function Embarks() {
       <Divider />
     </Box>
     <EmbarksFilter onApply={applyFilters} />
-    <EmbarksTable data={embarks} loading={loading} />
+    <EmbarksTable data={data.filtered} loading={loading} />
   </>
 }
 

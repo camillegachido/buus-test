@@ -11,7 +11,7 @@ interface IProps {
 }
 
 function StyledTableBody({ children, rowsLength, headerLength, loading, rowsPerPage }: IProps) {
-  if (rowsLength === 0 || loading)
+  if (loading)
     return <TableBody data-testid={options.tableBody}>
       <Loading
         rowsPerPage={rowsPerPage}
@@ -21,9 +21,13 @@ function StyledTableBody({ children, rowsLength, headerLength, loading, rowsPerP
 
   const emptyRows = rowsPerPage - rowsLength
 
+  if (rowsLength === 0)
+    return <TableBody data-testid={options.tableBody} style={{ height: 53 * emptyRows }}>
+      <TableCell colSpan={headerLength}>No data was found</TableCell>
+    </TableBody>
+
   return (<TableBody data-testid={options.tableBody}>
     {children}
-
     {emptyRows > 0 && (
       <TableRow style={{ height: 53 * emptyRows }} data-testid={options.fakeBody}>
         <TableCell colSpan={headerLength} />

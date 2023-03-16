@@ -28,8 +28,8 @@ const filterDate = (embark: IEmbark, filter: IEmbarkFilters) => {
 }
 
 const filterEmbarks = (embarks: IEmbark[], filters: IEmbarkFilters) => {
+  console.log(filters)
   const filter = (embark: IEmbark) => {
-
     return filterWithAll("car", embark, filters) && 
       filterWithAll("route", embark, filters) && 
       filterWithAll("driver", embark, filters) &&

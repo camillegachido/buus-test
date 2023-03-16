@@ -23,7 +23,6 @@ function StyledTable({ data, generateRow, header, loading }: IProps) {
   return (
     <TableContainer data-testid={options.table}>
       <Table sx={{ minWidth: 500 }} aria-label="embarks table">
-
         <TableHead sx={{ backgroundColor: '#e8e8e8' }}>
           <TableRow>
             {
