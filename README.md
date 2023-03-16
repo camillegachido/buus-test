@@ -1,5 +1,5 @@
 # Teste Buus
-Esse projeto foi um teste da empresa Buus, o intuito principal é criar um dashboard com uma listagem de embarques. 
+Esse projeto foi um teste da empresa Buus, o intuito principal é criar um dashboard com uma listagem de embarques. Ele foi feito com ReactJS, Typescript, Material UI e testes unitários com Jest e React Testing Library
 
 <br />
 
