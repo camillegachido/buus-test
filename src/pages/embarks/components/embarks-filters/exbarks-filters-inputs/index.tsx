@@ -1,8 +1,11 @@
+import { useEffect, useState } from "react"
+
 import { Grid } from "@mui/material"
 import { Dayjs } from "dayjs";
 
 import { IEmbarkFilters } from "~/common/types/embarks";
 import { DatePicker, Autocomplete } from '~/components'
+import { GetRoutes } from "~/services/embarks";
 
 interface IProps {
   filter: IEmbarkFilters;
@@ -10,6 +13,13 @@ interface IProps {
 }
 
 function EmbarksFiltersInputs({ filter, updateFilter }: IProps) {
+  const [routes, setRoutes] = useState<string[]>([])
+
+  useEffect(() => {
+    setRoutes(GetRoutes())
+  }, [])
+
+
   return (
     <Grid container spacing={1}>
       <Grid item xs={2}>
@@ -28,7 +38,7 @@ function EmbarksFiltersInputs({ filter, updateFilter }: IProps) {
       </Grid>
       <Grid item xs={8}>
         <Autocomplete
-          options={[]}
+          options={routes}
           value={filter.route}
           onChange={(value) => updateFilter("route", value)}
           label="Routes"
