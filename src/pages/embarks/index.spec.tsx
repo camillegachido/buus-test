@@ -1,4 +1,4 @@
-import { screen, within } from "@testing-library/react";
+import { act, screen, within } from "@testing-library/react";
 import user from '@testing-library/user-event';
 
 import { render } from '~/common/utils/test'
@@ -23,7 +23,7 @@ describe('Page: Embarks', () => {
     render(<Embarks />);
 
     const selectLabel = /Routes/;
-    const selectEl = await screen.findByLabelText(selectLabel);
+    const selectEl = screen.queryByLabelText(selectLabel) as HTMLElement;
     expect(selectEl).toBeInTheDocument();
 
     await user.click(selectEl);
@@ -32,11 +32,10 @@ describe('Page: Embarks', () => {
       name: selectLabel
     });
 
-
     await user.click(within(optionsPopupEl).getByText(/L04 Margarida x Ferrovia/));
 
     const button = screen.getByText(/Apply/)
-    await user.click(button);
+    await act(async () => await user.click(button));
     await tick()
 
     const row = await screen.findAllByText(/L04 Margarida x Ferrovia/)
