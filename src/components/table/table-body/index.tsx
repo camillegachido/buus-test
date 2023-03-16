@@ -12,18 +12,20 @@ interface IProps {
 
 function StyledTableBody({ children, rowsLength, headerLength, loading, rowsPerPage }: IProps) {
   if (loading)
-    return <TableBody data-testid={options.tableBody}>
+    return <TableBody data-testid={options.skeleton}>
       <Loading
         rowsPerPage={rowsPerPage}
         headerLength={headerLength}
       />
-    </TableBody>
+    </TableBody >
 
   const emptyRows = rowsPerPage - rowsLength
 
   if (rowsLength === 0)
     return <TableBody data-testid={options.tableBody} style={{ height: 53 * emptyRows }}>
-      <TableCell colSpan={headerLength}>No data was found</TableCell>
+      <TableRow>
+        <TableCell colSpan={headerLength}>No data was found</TableCell>
+      </TableRow>
     </TableBody>
 
   return (<TableBody data-testid={options.tableBody}>
