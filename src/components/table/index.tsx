@@ -35,7 +35,7 @@ function StyledTable({ data, generateRow, header, loading }: IProps) {
           </TableRow>
         </TableHead>
         <TableBody
-          rows={rows}
+          rowsLength={rows.length}
           rowsPerPage={rowsPerPage}
           headerLength={header.length}
           loading={loading}
@@ -62,7 +62,7 @@ function StyledTable({ data, generateRow, header, loading }: IProps) {
           </TableRow>
         </TableFooter>
       </Table>
-    </TableContainer>
+    </TableContainer >
   );
 }
 

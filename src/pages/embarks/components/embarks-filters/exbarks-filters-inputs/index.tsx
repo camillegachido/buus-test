@@ -1,11 +1,11 @@
 import { Grid } from "@mui/material"
 import { Dayjs } from "dayjs";
 
+import { IEmbarkFilters } from "~/common/types/embarks";
 import { DatePicker, Autocomplete } from '~/components'
-import { IFilterOptions } from "../../../types";
 
 interface IProps {
-  filter: IFilterOptions;
+  filter: IEmbarkFilters;
   updateFilter: (key: string, value: string | number | Dayjs | null) => void
 }
 
