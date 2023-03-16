@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -7,6 +7,7 @@ import { Input } from "~/components"
 import { options } from './options';
 import { useForm } from '~/common/hooks';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '~/contexts/auth';
 
 interface IFormData {
   password: string;
@@ -14,11 +15,14 @@ interface IFormData {
 }
 
 function SignIn() {
-  const navigate = useNavigate();
+  const { updateUsername } = useContext(AuthContext)
   const { form, setForm } = useForm<IFormData>({ password: '', username: '' })
+
+  const navigate = useNavigate();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+    updateUsername(form.data.username)
     navigate('/dashboard')
   };
 

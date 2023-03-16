@@ -1,9 +1,17 @@
 import { Box, Container } from '@mui/material';
-import { Outlet } from 'react-router-dom';
+import { useContext } from 'react';
+import { Navigate, Outlet } from 'react-router-dom';
+import { AuthContext } from '~/contexts/auth';
 import Header from './components/header';
 import Sidebar from './components/sidebar';
 
 function Dashboard() {
+  const { username } = useContext(AuthContext)
+
+  if (username === '') {
+    return <Navigate to="/" replace />;
+  }
+
   return (
     <>
       <Sidebar />
