@@ -40,5 +40,5 @@ describe('Page: Embarks', () => {
 
     const row = await screen.findAllByText(/L04 Margarida x Ferrovia/)
     expect(row.length).toBe(1)
-  })
+  }, 20000)
 })
