@@ -57,22 +57,22 @@ describe('Page: Sign in', () => {
   it('should change page if username and password are filled', async () => {
     render(<SignIn />);
 
-    const usernameContainer = await screen.getByTestId(options.username)
+    const usernameContainer = screen.getByTestId(options.username)
     const usernameInput = usernameContainer.querySelector(`#${options.username}`) as HTMLElement;
     await user.type(usernameInput, 'User')
 
     expect(usernameInput).toHaveValue('User')
 
-    const passwordContainer = await screen.getByTestId(options.password)
+    const passwordContainer = screen.getByTestId(options.password)
     const passwordInput = passwordContainer.querySelector(`#${options.password}`) as HTMLElement;
     await user.type(passwordInput, 'User')
 
     expect(passwordInput).toHaveValue('User')
 
     const button = await screen.findByText(/Sign In/)
+    expect(button).toBeInTheDocument()
     await user.click(button)
 
-    const dashboard = await screen.findByText(/Embarks/)
-    expect(dashboard).toBeInTheDocument()
+    expect(global.window.location.pathname).toContain('/dashboard');
   });
 })

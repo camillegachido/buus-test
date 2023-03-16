@@ -35,7 +35,7 @@ describe('Page: Embarks', () => {
     await user.click(within(optionsPopupEl).getByText(/L04 Margarida x Ferrovia/));
 
     const button = screen.getByText(/Apply/)
-    await act(async () => await user.click(button));
+    act(async () => await user.click(button));
     await tick()
 
     const row = await screen.findAllByText(/L04 Margarida x Ferrovia/)
