@@ -6,6 +6,12 @@ import { localizationProvider } from "~/common/hocs";
 import Embarks from "."
 import { options } from "./options";
 
+function tick() {
+  return new Promise(resolve => {
+    setTimeout(resolve, 2000);
+  })
+}
+
 describe('Page: Embarks', () => {
   it('should render embarks', () => {
     render(localizationProvider(<Embarks />));
@@ -26,12 +32,14 @@ describe('Page: Embarks', () => {
       name: selectLabel
     });
 
+
     await user.click(within(optionsPopupEl).getByText(/L04 Margarida x Ferrovia/));
 
     const button = screen.getByText(/Apply/)
     await user.click(button);
+    await tick()
 
-    const row = screen.getAllByText(/L04 Margarida x Ferrovia/)
+    const row = await screen.findAllByText(/L04 Margarida x Ferrovia/)
     expect(row.length).toBe(1)
   })
 })
