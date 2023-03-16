@@ -1,5 +1,7 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import dayjs from 'dayjs';
+
+import { render } from '~/common/utils/test'
 
 import EmbarksFiltersExtended from '.';
 import { options } from '../../../options';

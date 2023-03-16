@@ -1,5 +1,6 @@
-import { render, screen } from '@testing-library/react';
-import user from '@testing-library/user-event'
+import { screen } from '@testing-library/react';
+
+import { render } from '~/common/utils/test'
 
 import Input from './'
 

@@ -1,5 +1,7 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import user from '@testing-library/user-event';
+
+import { render } from '~/common/utils/test'
 
 import Select from './'
 import { options } from './options'
@@ -21,7 +23,7 @@ describe('select', () => {
     render(<Select
       options={[
         { label: 'Option 1', value: 1 },
-        { label: 'option 2', value: 2 }]}
+        { label: 'Option 2', value: 2 }]}
       value={0}
       onChange={() => { }}
       label='Label'
@@ -33,7 +35,9 @@ describe('select', () => {
     await user.click(dropdown);
 
     expect(screen.getByRole("presentation")).toBeVisible();
-    expect(screen.getByText("All")).toBeVisible();
+    expect(screen.getAllByText("All").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Option 1").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Option 2").length).toBeGreaterThan(0);
   })
 
 })

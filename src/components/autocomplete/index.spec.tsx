@@ -1,7 +1,9 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import user from '@testing-library/user-event';
 import { Autocomplete } from '..';
 import { options } from './options';
+
+import { render } from '~/common/utils/test'
 
 describe('autocomplete', () => {
   it('should render autocomplete', async () => {

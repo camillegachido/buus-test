@@ -1,7 +1,10 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import user from '@testing-library/user-event'
+
 import EmbarksFilters from '.'
 import { options } from '../../options';
+
+import { render } from '~/common/utils/test'
 
 describe('Embarks filters', () => {
   it('should render filters', () => {

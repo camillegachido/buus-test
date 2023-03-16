@@ -1,8 +1,12 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import dayjs from "dayjs";
-import { localizationProvider } from "~/common/hocs";
+
+import { render } from '~/common/utils/test'
+
 import EmbarksFiltersInputs from ".";
 import { options } from "../../../options";
+
+
 
 const filter = {
   car: '',
@@ -15,10 +19,10 @@ const filter = {
 
 describe('Embarks filters input', () => {
   it('should render embarks filters inputs', () => {
-    render(localizationProvider(
+    render(
       <EmbarksFiltersInputs
         filter={filter}
-        updateFilter={() => { }} />));
+        updateFilter={() => { }} />);
 
     const component = screen.queryByTestId(options.filterInputs)
 

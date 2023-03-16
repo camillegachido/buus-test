@@ -32,7 +32,7 @@ describe('table body', () => {
     </table>
     )
 
-    const skeleton = screen.queryAllByTestId(options.skeleton)
+    const skeleton = screen.queryByTestId(options.skeleton)
     expect(skeleton).toBeInTheDocument()
   })
   it('should render No data message if row length is 0', () => {

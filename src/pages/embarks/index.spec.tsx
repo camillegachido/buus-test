@@ -1,7 +1,7 @@
-import { render, screen, within } from "@testing-library/react";
+import { screen, within } from "@testing-library/react";
 import user from '@testing-library/user-event';
 
-import { localizationProvider } from "~/common/hocs";
+import { render } from '~/common/utils/test'
 
 import Embarks from "."
 import { options } from "./options";
@@ -14,13 +14,13 @@ function tick() {
 
 describe('Page: Embarks', () => {
   it('should render embarks', () => {
-    render(localizationProvider(<Embarks />));
+    render(<Embarks />);
 
     const rows = screen.queryAllByTestId(options.embarksRow)
     expect(rows.length).toBe(5)
   })
   it('should filter embarks when click on "Apply button"', async () => {
-    render(localizationProvider(<Embarks />));
+    render(<Embarks />);
 
     const selectLabel = /Routes/;
     const selectEl = await screen.findByLabelText(selectLabel);

@@ -5,7 +5,7 @@ import dayjs, { Dayjs } from "dayjs";
 import { MoreFiltersButton } from "./styles"
 import { EmbarksFiltersExtended } from ".."
 import { options } from "../../options"
-import EmbarksFiltersInputs from "./exbarks-filters-inputs";
+import EmbarksFiltersInputs from "./embarks-filters-inputs";
 import { IEmbarkFilters } from "~/common/types/embarks";
 
 interface IProps {
